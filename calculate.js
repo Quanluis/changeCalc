@@ -12,22 +12,23 @@ let pennies = 1;
 
 document.getElementById("calculate").onclick = () => {
 
-
     if(isNaN(input.value) == true){
 
 
         alert('Enter a number.')
 
     } else{
-        
-        console.log('How many Quarters fit: ' + Math.floor(result));
 
-        console.log('How many dimes fit ' + Math.floor((input.value % quarters) / dimes));
+        result = input.value / quarters;
 
-        console.log('How many nickles fit: ' + Math.floor((input.value % quarters % dimes) / nickles));
+        document.getElementById('quarters').value = Math.floor(result);
 
-        console.log('How many pennies fit: '+ Math.floor((input.value % quarters % dimes % nickles) / pennies));
-        
+        document.getElementById('dimes').value = Math.floor((input.value % quarters) / dimes);
+
+        document.getElementById('nickels').value = Math.floor((input.value % quarters % dimes) / nickles);
+
+        document.getElementById('pennies').value =  Math.floor((input.value % quarters % dimes % nickles) / pennies);
+
     }
 }
 
